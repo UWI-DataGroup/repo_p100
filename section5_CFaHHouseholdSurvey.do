@@ -3,7 +3,7 @@
     //  algorithm name			      section5_CFaHHouseholdSurvey.do
     //  project:				          Community Food and Health
     //  analysts:				 	        Ian HAMBLETON
-    // 	date last modified	      06-OCT-2018
+    // 	date last modified	      22-OCT-2018
     //  algorithm task			      Preparing DATA: SECTION 5
 
     ** General algorithm set-up
@@ -25,7 +25,7 @@
 ** HEADER -----------------------------------------------------
 
 ** IMPORT the REDCap EXPORT (6-OCT-2018)
-import delimited record_id q5_worry q5_unable q5_few q5_skip q5_less q5_ranout q5_noteat q5_noteatday q5_done q5_donereason section_5_food_insec_v_0 using "`datapath'/version01/1-input/section5_CFaHHouseholdSurvey.csv", varnames(nonames)
+import delimited record_id q5_worry q5_unable q5_few q5_skip q5_less q5_ranout q5_noteat q5_noteatday q5_done q5_donereason section_5_food_insec_v_0 using "`datapath'/version01/1-input/section5_CFaHHouseholdSurvey_22oct2018.csv", varnames(nonames)
 label data "CFaH Household Survey: SECTION 5"
 
 ** Merge with de-identified ID numbers
@@ -86,11 +86,10 @@ label variable section_5_food_insec_v_0 "Complete?"
 
 order pid record_id q5_worry q5_unable q5_few q5_skip q5_less q5_ranout q5_noteat q5_noteatday q5_done q5_donereason section_5_food_insec_v_0
 
-label data "CFaH Survey. Dataset01-DietScreener. Pre-release1. 07Oct2018"
+label data "CFaH Survey. Section5-DietScreener. Pre-release2. 22Oct2018"
 drop record_id q5_done q5_donereason section_5_food_insec_v_0  _merge
 sort pid
-datasignature set, saving(cfah5_pr1, replace) reset
-save "`datapath'/version01/2-working/section5_pre-release1.dta", replace
+save "`datapath'/version01/2-working/section5_pre-release2.dta", replace
 
 set linesize 180
 describe, full

@@ -3,7 +3,7 @@
     //  algorithm name			      section6_CFaHHouseholdSurvey.do
     //  project:				          Community Food and Health
     //  analysts:				 	        Ian HAMBLETON
-    // 	date last modified	      06-OCT-2018
+    // 	date last modified	      22-OCT-2018
     //  algorithm task			      Preparing DATA: SECTION 6
 
     ** General algorithm set-up
@@ -27,7 +27,7 @@
 
 
 ** IMPORT the REDCap EXPORT (6-OCT-2018)
-import delimited record_id q6_htn q6_dm q6_chol q6_hd q6_stk q6_cancer q6_htnrx q6_dmrx q6_edu q6_eth q6_ethoth q6_mar q6_occ q6_occoth q6_bpallow q6_intidbp q6_bpid q6_arm q6_sys1 q6_dias1 q6_sys2 q6_dias2 q6_sys3 q6_dias3 q6_htallow q6_intidheight q6_stadid q6_height q6_wtallow q6_intidweight q6_scaleid q6_weight q6_bmi q6_wcallow q6_intidwaist q6_tapeid q6_wc1 q6_wc2 q6_wc3 q6_done section_6_additional_v_0 using "`datapath'/version01/1-input/section6_CFaHHouseholdSurvey.csv", varnames(nonames)
+import delimited record_id q6_htn q6_dm q6_chol q6_hd q6_stk q6_cancer q6_htnrx q6_dmrx q6_edu q6_eth q6_ethoth q6_mar q6_occ q6_occoth q6_bpallow q6_intidbp q6_bpid q6_arm q6_sys1 q6_dias1 q6_sys2 q6_dias2 q6_sys3 q6_dias3 q6_htallow q6_intidheight q6_stadid q6_height q6_wtallow q6_intidweight q6_scaleid q6_weight q6_bmi q6_wcallow q6_intidwaist q6_tapeid q6_wc1 q6_wc2 q6_wc3 q6_done section_6_additional_v_0 using "`datapath'/version01/1-input/section6_CFaHHouseholdSurvey_22oct2018.csv", varnames(nonames)
 label data "CFaH Household Survey: SECTION 6"
 
 ** Merge with de-identified ID numbers
@@ -154,11 +154,10 @@ label variable section_6_additional_v_0 "Complete?"
 
 order pid record_id q6_htn q6_dm q6_chol q6_hd q6_stk q6_cancer q6_htnrx q6_dmrx q6_edu q6_eth q6_ethoth q6_mar q6_occ q6_occoth q6_bpallow q6_intidbp q6_bpid q6_arm q6_sys1 q6_dias1 q6_sys2 q6_dias2 q6_sys3 q6_dias3 q6_htallow q6_intidheight q6_stadid q6_height q6_wtallow q6_intidweight q6_scaleid q6_weight q6_bmi q6_wcallow q6_intidwaist q6_tapeid q6_wc1 q6_wc2 q6_wc3 q6_done section_6_additional_v_0
 
-label data "CFaH Survey. Dataset01-DietScreener. Pre-release1. 07Oct2018"
+label data "CFaH Survey. Section6-DietScreener. Pre-release2. 22Oct2018"
 drop record_id q6_done section_6_additional_v_0 _merge
 sort pid
-datasignature set, saving(cfah5_pr1, replace) reset
-save "`datapath'/version01/2-working/section6_pre-release1.dta", replace
+save "`datapath'/version01/2-working/section6_pre-release2.dta", replace
 
 set linesize 180
 describe, full

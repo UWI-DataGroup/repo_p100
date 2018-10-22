@@ -3,7 +3,7 @@
     //  algorithm name			      section3_CFaHHouseholdSurvey.do
     //  project:				          Community Food and Health
     //  analysts:				 	        Ian HAMBLETON
-    // 	date last modified	      06-OCT-2018
+    // 	date last modified	      22-OCT-2018
     //  algorithm task			      Preparing DATA: SECTION 3
 
     ** General algorithm set-up
@@ -26,7 +26,7 @@
 
 
 ** IMPORT the REDCap EXPORT (6-OCT-2018)
-import delimited record_id q3_eatoutnum q3_diets___1 q3_diets___2 q3_diets___3 q3_diets___4 q3_diets___5 q3_diets___6 q3_diets___7 q3_diets___8 q3_diets___9 q3_diets___10 q3_diets___11 q3_diets___12 q3_diets___13 q3_diets___14 q3_diets___15 q3_dietreason___1 q3_dietreason___2 q3_dietreason___3 q3_dietreason___4 q3_dietreason___5 q3_dietreason___6 q3_dietreason___7 q3_dietreason___8 q3_dietreason___9 q3_dietreason___10 q3_dietreason___11 q3_fruitnum q3_fruitserv q3_vegnum q3_vegserv q3_fishnum q3_fishserv q3_oilfishnum q3_oilfishserv q3_upmeatnum q3_upmeatserv q3_pmeatnum q3_pmeatserv q3_upfoodnum q3_pfoodnum q3_tinfoodnum q3_ultpfoodnum q3_ssbnum q3_ssbserv q3_ddrinknum q3_ddrinkserv q3_drinkdaily___1 q3_drinkdaily___2 q3_drinkdaily___3 q3_drinkdaily___4 q3_drinkdaily___5 q3_drinkdaily___6 q3_drinkdaily___7 q3_drinkdaily___8 q3_drinkdaily___9 q3_drinkdaily___10 q3_drinkdaily___11 q3_fjuiceserv q3_mjuiceserv q3_twatserv q3_bwatserv q3_tea q3_teamilksug q3_teasug q3_teamilk q3_milkserv q3_milktype___1 q3_milktype___2 q3_milktype___3 q3_milktype___4 q3_milktype___5 q3_milktype___6 q3_milktype___7 q3_milktype___8 q3_milktype___9 q3_milktype___10 q3_milktype___11 q3_addnacook q3_addnabf q3_addnawhile q3_addsugcook q3_addsugbf q3_addsugwhile q3_oiltype___1 q3_oiltype___2 q3_oiltype___3 q3_oiltype___4 q3_oiltype___5 q3_oiltype___6 q3_oiltype___7 q3_oiltype___8 q3_oiltype___9 q3_oiltype___10 q3_oiltype___11 q3_oiltype___12 q3_oiltype___13 q3_suppmv q3_suppva q3_suppvb q3_suppvc q3_suppvd q3_suppcod q3_suppca q3_suppo3 q3_suppfe q3_suppzn q3_done q3_donereason section_3_diet_scree_v_0 using "`datapath'/version01/1-input/section3_CFaHHouseholdSurvey.csv", varnames(nonames)
+import delimited record_id q3_eatoutnum q3_diets___1 q3_diets___2 q3_diets___3 q3_diets___4 q3_diets___5 q3_diets___6 q3_diets___7 q3_diets___8 q3_diets___9 q3_diets___10 q3_diets___11 q3_diets___12 q3_diets___13 q3_diets___14 q3_diets___15 q3_dietreason___1 q3_dietreason___2 q3_dietreason___3 q3_dietreason___4 q3_dietreason___5 q3_dietreason___6 q3_dietreason___7 q3_dietreason___8 q3_dietreason___9 q3_dietreason___10 q3_dietreason___11 q3_fruitnum q3_fruitserv q3_vegnum q3_vegserv q3_fishnum q3_fishserv q3_oilfishnum q3_oilfishserv q3_upmeatnum q3_upmeatserv q3_pmeatnum q3_pmeatserv q3_upfoodnum q3_pfoodnum q3_tinfoodnum q3_ultpfoodnum q3_ssbnum q3_ssbserv q3_ddrinknum q3_ddrinkserv q3_drinkdaily___1 q3_drinkdaily___2 q3_drinkdaily___3 q3_drinkdaily___4 q3_drinkdaily___5 q3_drinkdaily___6 q3_drinkdaily___7 q3_drinkdaily___8 q3_drinkdaily___9 q3_drinkdaily___10 q3_drinkdaily___11 q3_fjuiceserv q3_mjuiceserv q3_twatserv q3_bwatserv q3_tea q3_teamilksug q3_teasug q3_teamilk q3_milkserv q3_milktype___1 q3_milktype___2 q3_milktype___3 q3_milktype___4 q3_milktype___5 q3_milktype___6 q3_milktype___7 q3_milktype___8 q3_milktype___9 q3_milktype___10 q3_milktype___11 q3_addnacook q3_addnabf q3_addnawhile q3_addsugcook q3_addsugbf q3_addsugwhile q3_oiltype___1 q3_oiltype___2 q3_oiltype___3 q3_oiltype___4 q3_oiltype___5 q3_oiltype___6 q3_oiltype___7 q3_oiltype___8 q3_oiltype___9 q3_oiltype___10 q3_oiltype___11 q3_oiltype___12 q3_oiltype___13 q3_suppmv q3_suppva q3_suppvb q3_suppvc q3_suppvd q3_suppcod q3_suppca q3_suppo3 q3_suppfe q3_suppzn q3_done q3_donereason section_3_diet_scree_v_0 using "`datapath'/version01/1-input/section3_CFaHHouseholdSurvey_22oct2018.csv", varnames(nonames)
 label data "CFaH Household Survey: SECTION 3"
 
 ** Merge with de-identified ID numbers
@@ -363,11 +363,10 @@ label variable section_3_diet_scree_v_0 "Complete?"
 order pid record_id q3_eatoutnum q3_diets___1 q3_diets___2 q3_diets___3 q3_diets___4 q3_diets___5 q3_diets___6 q3_diets___7 q3_diets___8 q3_diets___9 q3_diets___10 q3_diets___11 q3_diets___12 q3_diets___13 q3_diets___14 q3_diets___15 q3_dietreason___1 q3_dietreason___2 q3_dietreason___3 q3_dietreason___4 q3_dietreason___5 q3_dietreason___6 q3_dietreason___7 q3_dietreason___8 q3_dietreason___9 q3_dietreason___10 q3_dietreason___11 q3_fruitnum q3_fruitserv q3_vegnum q3_vegserv q3_fishnum q3_fishserv q3_oilfishnum q3_oilfishserv q3_upmeatnum q3_upmeatserv q3_pmeatnum q3_pmeatserv q3_upfoodnum q3_pfoodnum q3_tinfoodnum q3_ultpfoodnum q3_ssbnum q3_ssbserv q3_ddrinknum q3_ddrinkserv q3_drinkdaily___1 q3_drinkdaily___2 q3_drinkdaily___3 q3_drinkdaily___4 q3_drinkdaily___5 q3_drinkdaily___6 q3_drinkdaily___7 q3_drinkdaily___8 q3_drinkdaily___9 q3_drinkdaily___10 q3_drinkdaily___11 q3_fjuiceserv q3_mjuiceserv q3_twatserv q3_bwatserv q3_tea q3_teamilksug q3_teasug q3_teamilk q3_milkserv q3_milktype___1 q3_milktype___2 q3_milktype___3 q3_milktype___4 q3_milktype___5 q3_milktype___6 q3_milktype___7 q3_milktype___8 q3_milktype___9 q3_milktype___10 q3_milktype___11 q3_addnacook q3_addnabf q3_addnawhile q3_addsugcook q3_addsugbf q3_addsugwhile q3_oiltype___1 q3_oiltype___2 q3_oiltype___3 q3_oiltype___4 q3_oiltype___5 q3_oiltype___6 q3_oiltype___7 q3_oiltype___8 q3_oiltype___9 q3_oiltype___10 q3_oiltype___11 q3_oiltype___12 q3_oiltype___13 q3_suppmv q3_suppva q3_suppvb q3_suppvc q3_suppvd q3_suppcod q3_suppca q3_suppo3 q3_suppfe q3_suppzn q3_done q3_donereason section_3_diet_scree_v_0
 
 
-label data "CFaH Survey. Dataset01-DietScreener. Pre-release1. 07Oct2018"
+label data "CFaH Survey. Section3-DietScreener. Pre-release2. 22Oct2018"
 drop record_id q3_done q3_donereason section_3_diet_scree_v_0 _merge
 sort pid
-datasignature set, saving(cfah3_pr1, replace) reset
-save "`datapath'/version01/2-working/section3_pre-release1.dta", replace
+save "`datapath'/version01/2-working/section3_pre-release2.dta", replace
 
 set linesize 180
 describe, full
