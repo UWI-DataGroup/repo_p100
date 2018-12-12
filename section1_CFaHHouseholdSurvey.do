@@ -74,7 +74,7 @@ replace q1_cook = 4 if q1_cook___4==1
 ** ----------------------------------------------------------------------
 label define q1_share_ 1 "No" 2 "Yes"
 label define q1_country_ 1 "Fiji" 2 "St. Vincent"
-label define q1_region_ 1 "Rural formal" 2 "Rural informal" 3 "Urban formal" 4 "Urban informal" 5 "Cane Garden" 6 "Fair Hall" 7 "New Grounds" 8 "Overland"
+label define q1_region_ 1 "Rural formal" 2 "Rural informal" 3 "Urban formal" 4 "Urban informal" 5 "Urban, Hi SES" 6 "Urban, Lo SES" 7 "Rural, hi SES" 8 "Rural, Lo SES"
 label define q1_sex_ 1 "Male" 2 "Female" 3 "Not stated"
 label define q1_dobpartial_ 1 "Yes" 2 "No"
 label define q1_cook___1_ 0 "Unchecked" 1 "Checked"
@@ -219,6 +219,8 @@ local vardrop "q1_phone q1_dob q1_dobday q1_dobmonth q1_dobyear q1_village q1_di
 foreach var in `vardrop' {
   cap drop `var'
 }
+** Drop SVG Urba Hi SES (Cane Garden) only x2 participants
+** drop if q1_region==5
 
 ** ----------------------------------------------------------------------
 ** PART 7: ORDER AND SAVE THE FILE
