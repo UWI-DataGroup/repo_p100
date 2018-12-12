@@ -26,7 +26,7 @@
 
 
 ** IMPORT the REDCap EXPORT (6-OCT-2018)
-import delimited record_id q2_usualday q2_unusualhow___1 q2_unusualhow___2 q2_unusualhow___3 q2_unusualhow___4 q2_unusualhow___5 q2_unusualoth q2_recall1 q2_recall2 q2_recall3 q2_recall4 q2_grains q2_roots q2_pulses q2_nuts q2_milk q2_ormeat q2_pmeat q2_ppoul q2_upmeat q2_uppoul q2_fish q2_eggs q2_gveg q2_vitaveg q2_vitafruit q2_vegoth q2_fruitoth q2_insects q2_palmoil q2_oils q2_snacks q2_sweets q2_ssb q2_cond q2_drinkoth q2_grains2 q2_roots2 q2_pulses2 q2_nuts2 q2_milk2 q2_ormeat2 q2_pmeat2 q2_ppoul2 q2_upmeat2 q2_uppoul2 q2_fish2 q2_eggs2 q2_gveg2 q2_vitaveg2 q2_vitafruit2 q2_vegoth2 q2_fruitoth2 q2_insects2 q2_palmoil2 q2_oils2 q2_snacks2 q2_sweets2 q2_ssb2 q2_cond2 q2_eatout q2_done q2_donereason section_2_diet_diver_v_0 using "`datapath'/version01/1-input/section2_CFaHHouseholdSurvey_22oct2018.csv", varnames(nonames)
+import delimited record_id q2_usualday q2_unusualhow___1 q2_unusualhow___2 q2_unusualhow___3 q2_unusualhow___4 q2_unusualhow___5 q2_unusualoth q2_recall1 q2_recall2 q2_recall3 q2_recall4 q2_grains q2_roots q2_pulses q2_nuts q2_milk q2_ormeat q2_pmeat q2_ppoul q2_upmeat q2_uppoul q2_fish q2_eggs q2_gveg q2_vitaveg q2_vitafruit q2_vegoth q2_fruitoth q2_insects q2_palmoil q2_oils q2_snacks q2_sweets q2_ssb q2_cond q2_drinkoth q2_grains2 q2_roots2 q2_pulses2 q2_nuts2 q2_milk2 q2_ormeat2 q2_pmeat2 q2_ppoul2 q2_upmeat2 q2_uppoul2 q2_fish2 q2_eggs2 q2_gveg2 q2_vitaveg2 q2_vitafruit2 q2_vegoth2 q2_fruitoth2 q2_insects2 q2_palmoil2 q2_oils2 q2_snacks2 q2_sweets2 q2_ssb2 q2_cond2 q2_eatout q2_done q2_donereason section_2_diet_diver_v_0 using "`datapath'/version01/1-input/section2_CFaHHouseholdSurvey_11dec2018.csv", varnames(nonames)
 label data "CFaH Household Survey: SECTION 2"
 
 ** Merge with de-identified ID numbers
@@ -247,9 +247,9 @@ set more off
 describe
 
 drop record_id q2_unusualoth q2_done q2_donereason section_2_diet_diver_v_0 _merge
-label data "CFaH Survey. Section2-DietDiversity. Pre-release2. 22Oct2018"
+label data "CFaH Survey. Section2-DietDiversity. Pre-release3. 11Dec2018"
 sort pid
-save "`datapath'/version01/2-working/section2_pre-release2.dta", replace
+save "`datapath'/version01/2-working/section2_pre-release3.dta", replace
 
 set linesize 180
 describe, full

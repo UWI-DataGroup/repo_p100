@@ -25,9 +25,8 @@
 ** HEADER -----------------------------------------------------
 
 ** IMPORT the REDCap EXPORT (6-OCT-2018)
-import delimited record_id q5_worry q5_unable q5_few q5_skip q5_less q5_ranout q5_noteat q5_noteatday q5_done q5_donereason section_5_food_insec_v_0 using "`datapath'/version01/1-input/section5_CFaHHouseholdSurvey_22oct2018.csv", varnames(nonames)
+import delimited record_id q5_worry q5_unable q5_few q5_skip q5_less q5_ranout q5_noteat q5_noteatday q5_done q5_donereason section_5_food_insec_v_0 using "`datapath'/version01/1-input/section5_CFaHHouseholdSurvey_11dec2018.csv", varnames(nonames)
 label data "CFaH Household Survey: SECTION 5"
-
 ** Merge with de-identified ID numbers
 sort record_id
 merge 1:1 record_id using "`datapath'/version01/2-working/section1_idlinkage.dta"
@@ -86,10 +85,10 @@ label variable section_5_food_insec_v_0 "Complete?"
 
 order pid record_id q5_worry q5_unable q5_few q5_skip q5_less q5_ranout q5_noteat q5_noteatday q5_done q5_donereason section_5_food_insec_v_0
 
-label data "CFaH Survey. Section5-DietScreener. Pre-release2. 22Oct2018"
+label data "CFaH Survey. Section5-DietScreener. Pre-release3. 11Dec2018"
 drop record_id q5_done q5_donereason section_5_food_insec_v_0  _merge
 sort pid
-save "`datapath'/version01/2-working/section5_pre-release2.dta", replace
+save "`datapath'/version01/2-working/section5_pre-release3.dta", replace
 
 set linesize 180
 describe, full

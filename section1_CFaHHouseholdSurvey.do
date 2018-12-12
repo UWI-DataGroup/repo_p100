@@ -3,7 +3,7 @@
     //  algorithm name			    section1_CFaHHouseholdSurvey.do
     //  project:				    Community Food and Health
     //  analysts:					Ian HAMBLETON
-    // 	date last modified	        22-OCT-2018
+    // 	date last modified	        11-DEC-2018
     //  algorithm task			    Preparing DATA: SECTION 1
 
     ** General algorithm set-up
@@ -25,7 +25,7 @@
 ** HEADER -----------------------------------------------------
 
 ** IMPORT the REDCap EXPORT (6-OCT-2018)
- import delimited record_id q1_share q1_intid1 q1_intid2 q1_pid q1_surveydt q1_country q1_district q1_village q1_house q1_phone q1_sex q1_dobpartial q1_dob q1_dobday q1_dobmonth q1_dobyear q1_agecalc q1_age q1_cook___1 q1_cook___2 q1_cook___3 q1_cook___4 q1_housetotal q1_p1sex q1_p1age q1_p2sex q1_p2age q1_p3sex q1_p3age q1_p4sex q1_p4age q1_p5sex q1_p5age q1_p6sex q1_p6age q1_p7sex q1_p7age q1_p8sex q1_p8age q1_p9sex q1_p9age q1_p10sex q1_p10age q1_p11sex q1_p11age q1_p12sex q1_p12age q1_done q1_donereason section_1_participan_v_0 using "`datapath'/version01/1-input/section1_CFaHHouseholdSurvey_22oct2018.csv", varnames(nonames)
+ import delimited record_id q1_share q1_intid1 q1_intid2 q1_pid q1_surveydt q1_country q1_district q1_village q1_house q1_phone q1_sex q1_dobpartial q1_dob q1_dobday q1_dobmonth q1_dobyear q1_agecalc q1_age q1_cook___1 q1_cook___2 q1_cook___3 q1_cook___4 q1_housetotal q1_p1sex q1_p1age q1_p2sex q1_p2age q1_p3sex q1_p3age q1_p4sex q1_p4age q1_p5sex q1_p5age q1_p6sex q1_p6age q1_p7sex q1_p7age q1_p8sex q1_p8age q1_p9sex q1_p9age q1_p10sex q1_p10age q1_p11sex q1_p11age q1_p12sex q1_p12age q1_done q1_donereason section_1_participan_v_0 using "`datapath'/version01/1-input/section1_CFaHHouseholdSurvey_11dec2018.csv", varnames(nonames)
 label data "CFaH Household Survey: SECTION 1"
 
 ** Create Record IDs. COUNTRY SPECIFIC ID and INTERNAL UNIQUE ID
@@ -227,7 +227,7 @@ foreach var in `vardrop' {
 ** SAVE IDENTIFIER DATASET TO MERGE WITH OTHER DATASETS
 preserve
     keep record_id pid
-    label data "CFaH Survey. ID linkage. 07Oct2018"
+    label data "CFaH Survey. ID linkage. 11dec2018"
     save "`datapath'/version01/2-working/section1_idlinkage.dta", replace
 restore
 
@@ -236,8 +236,8 @@ order q1_country q1_region q1_house q1_hh hid cid pid record_id q1_share q1_inti
 drop  q1_house q1_share q1_intid1 q1_intid2 q1_pid q1_age q1_dobpartial q1_done q1_donereason section_1_participan_v_0 q1_cook___1 q1_cook___2 q1_cook___3 q1_cook___4
 drop record_id
 
-label data "CFaH Survey. Section1-Participant Information. Pre-release2. 22Oct2018"
-save "`datapath'/version01/2-working/section1_pre-release2.dta", replace
+label data "CFaH Survey. Section1-Participant Information. Pre-release3. 11dec2018"
+save "`datapath'/version01/2-working/section1_pre-release3.dta", replace
 
 set linesize 180
 describe, full

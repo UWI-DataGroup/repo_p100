@@ -27,7 +27,7 @@
 
 
 ** IMPORT the REDCap EXPORT (6-OCT-2018)
-import delimited record_id q6_htn q6_dm q6_chol q6_hd q6_stk q6_cancer q6_htnrx q6_dmrx q6_edu q6_eth q6_ethoth q6_mar q6_occ q6_occoth q6_bpallow q6_intidbp q6_bpid q6_arm q6_sys1 q6_dias1 q6_sys2 q6_dias2 q6_sys3 q6_dias3 q6_htallow q6_intidheight q6_stadid q6_height q6_wtallow q6_intidweight q6_scaleid q6_weight q6_bmi q6_wcallow q6_intidwaist q6_tapeid q6_wc1 q6_wc2 q6_wc3 q6_done section_6_additional_v_0 using "`datapath'/version01/1-input/section6_CFaHHouseholdSurvey_22oct2018.csv", varnames(nonames)
+import delimited record_id q6_htn q6_dm q6_chol q6_hd q6_stk q6_cancer q6_htnrx q6_dmrx q6_edu q6_eth q6_ethoth q6_mar q6_occ q6_occoth q6_bpallow q6_intidbp q6_bpid q6_arm q6_sys1 q6_dias1 q6_sys2 q6_dias2 q6_sys3 q6_dias3 q6_htallow q6_intidheight q6_stadid q6_height q6_wtallow q6_intidweight q6_scaleid q6_weight q6_bmi q6_wcallow q6_intidwaist q6_tapeid q6_wc1 q6_wc2 q6_wc3 q6_done section_6_additional_v_0 using "`datapath'/version01/1-input/section6_CFaHHouseholdSurvey_11dec2018.csv", varnames(nonames)
 label data "CFaH Household Survey: SECTION 6"
 
 ** Merge with de-identified ID numbers
@@ -154,10 +154,10 @@ label variable section_6_additional_v_0 "Complete?"
 
 order pid record_id q6_htn q6_dm q6_chol q6_hd q6_stk q6_cancer q6_htnrx q6_dmrx q6_edu q6_eth q6_ethoth q6_mar q6_occ q6_occoth q6_bpallow q6_intidbp q6_bpid q6_arm q6_sys1 q6_dias1 q6_sys2 q6_dias2 q6_sys3 q6_dias3 q6_htallow q6_intidheight q6_stadid q6_height q6_wtallow q6_intidweight q6_scaleid q6_weight q6_bmi q6_wcallow q6_intidwaist q6_tapeid q6_wc1 q6_wc2 q6_wc3 q6_done section_6_additional_v_0
 
-label data "CFaH Survey. Section6-DietScreener. Pre-release2. 22Oct2018"
+label data "CFaH Survey. Section6-DietScreener. Pre-release3. 11Dec2018"
 drop record_id q6_done section_6_additional_v_0 _merge
 sort pid
-save "`datapath'/version01/2-working/section6_pre-release2.dta", replace
+save "`datapath'/version01/2-working/section6_pre-release3.dta", replace
 
 set linesize 180
 describe, full
